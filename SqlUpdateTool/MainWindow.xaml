@@ -1,0 +1,44 @@
+﻿<Window x:Class="SqlUpdateTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SqlUpdateTool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition/>
+            <RowDefinition Height="55"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+            <TextBox x:Name="FileTextBox" Height="35" Width="600" IsReadOnly="True" Margin="5,5,5,5"/>
+            <Button x:Name="FileSelectButton" Height="35" Width="100" Content="Select file..." Click="FileSelectButton_OnClick" Margin="5,5,5,5"/>
+        </StackPanel>
+
+        <DataGrid x:Name="InputDataGrid" Grid.Row="1" Margin="5,5,5,5"
+                  IsReadOnly="True" 
+                  CanUserAddRows="False" 
+                  SelectedItem ="{Binding SelectedTestPlan, Mode=TwoWay}"
+                  SelectionMode="Extended"
+                  CanUserSortColumns="True"
+                  CanUserResizeColumns="True"
+                  CanUserReorderColumns="True"
+                  />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5,5,5,5">
+            <Button x:Name="ProcessButton"  Height="35" Width="100" Content="Process Updates" Click="ProcessButton_OnClick" Margin="5,5,5,5"/>
+        </StackPanel>
+
+        <TextBox x:Name="OutputTextBox" Grid.Row="3" IsReadOnly="True" Margin="5,5,5,5" 
+                    TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Visible"/>
+
+        <TextBox x:Name="SqlTextBox" Grid.Row="4" IsReadOnly="True" Margin="5,5,5,5" 
+                 TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Visible"/>
+    </Grid>
+</Window>
