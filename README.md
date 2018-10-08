@@ -6,8 +6,9 @@ This tool was designed to read Excel files and prepare SQL update statements. It
 - the column headers are in the first row
 - the column headers are the field names for keys or fields to be updated, based on the following syntax:
 
-For keys: Keys.Table.Field
-For values: Table.Field
+For keys: **Keys**.*Table.Field*
+
+For values: *Table.Field*
 
 For keys, the first word is literally the word "Keys"; for Table and Field substitute the appropriate table and field name.
 
